@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #EE4E4E;
+    --secondary-color: #FFC700;
+    --tercer-color: #219C90;
+    --cuarto-color: #FFFFFF;
+    --quinto-color:#9B9797;
+    --font-size:1.37rem;
+    --font-famili: Karantina;
+}
+
+.home{
+    background: var(--cuarto-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+    width: 100vw; /* Opcional, si quieres que ocupe todo el ancho también */
+}
+.boton{
+    background: var(--primary-color) ;
+    width: 7.5rem;
+    height: 2.5rem;
+    border-radius: 0.93rem;
+    border: #EE4E4E;
+    color: var(--cuarto-color);
+    font-family: var(--font-famili);
+    font-size: var(--font-size);
+}
+
+.boton:hover {
+    background: var(--cuarto-color);
+    width: 7.5rem;
+    height: 2.5rem;
+    border: 2px solid var(--primary-color); /* Definir el ancho, estilo y color del borde */
+    color: var(--primary-color);
+    border-radius: 0.9375rem; /* 15px convertido a rem */
+}
+
+/* Home */
+
+
+.nav{
+    display: flex;
+    width: 100%;
+    background: var(--cuarto-color);
+    padding-left: 10rem;
+}
+
+.img_nav{
+    width: 15rem;
+    height: 2.5rem;
+}
+
+.home_label{
+    font-family: var(--font-famili);
+    font-size:2rem ;
+    color: var(--quinto-color);
+
+}
+.home_formulario{
+    display: flex;
+    flex-direction: column;
+    padding-left: 11rem;
+    padding-top: 1.5rem;
+}
+.home_input{
+    border: .1rem solid var(--quinto-color);
+    width: 30rem;
+}
