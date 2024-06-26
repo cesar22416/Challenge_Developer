@@ -10,6 +10,7 @@
     --font-famili: Karantina;
 }
 
+
 .home{
     background: var(--cuarto-color);
     display: flex;
@@ -24,12 +25,11 @@
     width: 7.5rem;
     height: 2.5rem;
     border-radius: 0.93rem;
-    border: #EE4E4E;
+    border: var(--primary-color);
     color: var(--cuarto-color);
     font-family: var(--font-famili);
     font-size: var(--font-size);
 }
-
 .boton:hover {
     background: var(--cuarto-color);
     width: 7.5rem;
@@ -38,8 +38,49 @@
     color: var(--primary-color);
     border-radius: 0.9375rem; /* 15px convertido a rem */
 }
+.boton_encrytar:hover,
+.boton_desencriptar:hover{
+    background: var(--secondary-color);
+    width: 16.25rem ;
+    height: 2.5rem;
+    border: 2px solid var(--secondary-color); /* Definir el ancho, estilo y color del borde */
+    color: var(--cuarto-color);
+    border-radius: 0.9375rem; /* 15px convertido a rem */
+}
+
+
+.boton_encrytar{
+    background: var(--primary-color) ;
+    width: 16.25rem ;
+    height: 2.5rem;
+    border-radius: 0.93rem;
+    border: var(--primary-color);
+    color: var(--cuarto-color);
+    font-family: var(--font-famili);
+    font-size: var(--font-size);
+    margin-right: 5rem;
+    margin-top: 1.2rem;
+}
+.boton_desencriptar{
+    background: var(--cuarto-color) ;
+    width: 16.25rem ;
+    height: 2.5rem;
+    border-radius: 0.93rem;
+    border: solid ;
+    color: var(--primary-color);
+    font-family: var(--font-famili);
+    font-size: var(--font-size);
+    margin-right: 5rem;
+    margin-top: 1.2rem;
+}
 
 /* Home */
+.box_madre{
+    width: 100%;
+    display: flex;
+
+}
+
 
 
 .nav{
@@ -60,13 +101,72 @@
     color: var(--quinto-color);
 
 }
+.home_botones{
+    display: flex;
+}
 .home_formulario{
     display: flex;
+    width: 50%;
     flex-direction: column;
     padding-left: 11rem;
     padding-top: 1.5rem;
 }
+.home_pegar_texto{
+    display: flex;
+    flex-direction: column;
+}
 .home_input{
     border: .1rem solid var(--quinto-color);
-    width: 30rem;
+    width: 90%;
+    height: 65vh;
+}
+.home_alert{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+.home_error{
+    display: flex;
+    align-items: center;
+    background: var(--secondary-color);
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    padding: 1rem;
+    color: var(--cuarto-color);
+    margin-right: 1rem;
+    
+}
+.home_texto_encriptado{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-famili);
+    color: var(--cuarto-color);
+    
+}
+.home_texto_encriptado p{
+    font-size: 2.5rem;
+}
+
+.home_img{
+    width: 100%;
+}
+.home_label_encryptado{
+    font-size: 1.2rem;
+}
+
+.home_aside{
+    background: var(--secondary-color);
+    height: 90vh;
+    width: 30%;
+    border-radius: 3rem;
+}
+.home_texto_alert{
+    font-family: var(--font-famili);
+    font-size: var(--font-size);
+    color: var(--quinto-color);
 }
