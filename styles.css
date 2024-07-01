@@ -156,7 +156,8 @@
     width: 100%;
 }
 .home_label_encryptado{
-    font-size: 1.2rem;
+    font-size:2rem;
+    color: var(--secondary-color);
 }
 
 .home_aside{
@@ -170,3 +171,13 @@
     font-size: var(--font-size);
     color: var(--quinto-color);
 }
+#outputText{
+    width: 80%;
+    height: 80%;
+    background: var(--tercer-color);
+    border: none;
+    font-family: var(--font-famili);
+    color: var(--cuarto-color);
+    font-size: 1.6rem;
+}
+

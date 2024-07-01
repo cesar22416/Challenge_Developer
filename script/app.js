@@ -6,10 +6,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const backButton = document.getElementById('back');
     const textoEncriptado = document.getElementById('outputText');
     const mensaje = document.getElementById('mensaje');
+    const homeTextoEncriptado = document.querySelector('.home_texto_encriptado');
+    const homeImg = document.querySelector('.home_img');
+    const copiarButton = document.getElementById('copiar');
 
     // Función para redirigir a una URL específica
     function redirectTo(url) {
         window.location.href = url;
+    }
+
+    // Función para ocultar o mostrar el textarea de salida según el contenido del textarea de entrada
+    function toggleOutputVisibility(show) {
+        if (show) {
+            textoEncriptado.style.display = "block";
+            copiarButton.style.display = "block"; // Mostrar el botón de copiar
+        } else {
+            textoEncriptado.style.display = "none";
+            copiarButton.style.display = "none"; // Ocultar el botón de copiar
+        }
     }
 
     // Función para encriptar texto utilizando el cifrado César
@@ -32,14 +46,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Mostrar el texto encriptado en el textarea de salida
         textoEncriptado.value = output;
+        toggleOutputVisibility(true);
+
+        // Cambiar el fondo de la sección y ocultar la imagen y el mensaje
+        homeTextoEncriptado.style.backgroundColor = "#219C90";
+        homeTextoEncriptado.style.borderRadius = "3rem";
+        homeImg.style.display = "none";
+        mensaje.style.display = "none";
+
+        // Limpiar el textarea de entrada
+        textarea.value = "";
     }
 
     // Función para desencriptar texto utilizando el cifrado César
     function decryptText() {
-        var input = textoEncriptado.value; // Usar el texto encriptado original
+        var input = textoEncriptado.value || textarea.value; // Usar el texto encriptado original o el texto externo
         var output = "";
         var shift = 3; // Mismo desplazamiento utilizado en la encriptación
-    
+
         for (var i = 0; i < input.length; i++) {
             var charCode = input.charCodeAt(i);
             if (charCode >= 65 && charCode <= 90) {  // Para letras mayúsculas
@@ -50,12 +74,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 output += input.charAt(i);  // Conserva caracteres no alfabéticos
             }
         }
-    
-        textarea.value = output; // Mostrar el texto desencriptado en el textarea de entrada
+
+        // Mostrar el texto desencriptado en el textarea de entrada
+        textarea.value = output;
+        toggleOutputVisibility(false); // Ocultar el textarea de salida
+
+        // Restablecer el estado inicial de la sección
+        homeTextoEncriptado.style.backgroundColor = "";
+        homeTextoEncriptado.style.borderRadius = ""; // Restablecer el border-radius
+        homeImg.style.display = "block";
+        mensaje.style.display = "block";
+    }
+
+    // Función para copiar el texto del textarea de salida
+    function copyText() {
+        textoEncriptado.select();
+        document.execCommand('copy');
+        // Deseleccionar el texto después de copiar
+        window.getSelection().removeAllRanges();
     }
 
     // Verificar si los elementos existen antes de añadir los event listeners
-    if (textarea && encryptButton && decryptButton && backButton) {
+    if (textarea && encryptButton && decryptButton && backButton && homeTextoEncriptado && homeImg && mensaje && copiarButton) {
         // Añadir evento de clic al botón de encriptado
         encryptButton.addEventListener('click', function() {
             encryptText();
@@ -66,10 +106,19 @@ document.addEventListener('DOMContentLoaded', function() {
             decryptText();
         });
 
+        // Añadir evento de clic al botón de copiar
+        copiarButton.addEventListener('click', function() {
+            copyText();
+        });
+
         // Añadir evento de clic al botón de volver atrás
         backButton.addEventListener('click', function() {
             redirectTo('index.html');
         });
+
+        // Ocultar inicialmente el textarea de salida y el botón de copiar
+        toggleOutputVisibility(false);
+        copiarButton.style.display = "none";
     } else {
         console.warn('Algunos elementos no se encontraron en el DOM.');
     }
