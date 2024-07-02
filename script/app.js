@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const homeTextoEncriptado = document.querySelector('.home_texto_encriptado');
     const homeImg = document.querySelector('.home_img');
     const copiarButton = document.getElementById('copiar');
+    const imgOcultar = document.getElementById('imgOcultar'); // Referencia a la imagen a ocultar
 
     // Función para redirigir a una URL específica
     function redirectTo(url) {
@@ -54,6 +55,20 @@ document.addEventListener('DOMContentLoaded', function() {
         homeImg.style.display = "none";
         mensaje.style.display = "none";
 
+        // Mostrar la imagen si la pantalla es más ancha que 1000px
+        if (window.innerWidth > 1000) {
+            imgOcultar.style.display = 'block';
+        }
+
+        // Centrar la sección home_texto_encriptado
+        homeTextoEncriptado.style.display = "flex";
+        homeTextoEncriptado.style.flexDirection = "column";
+        homeTextoEncriptado.style.justifyContent = "center";
+        homeTextoEncriptado.style.alignItems = "center";
+        homeTextoEncriptado.style.textAlign = "center";
+        homeTextoEncriptado.style.margin = "auto";
+        homeTextoEncriptado.style.maxWidth = "100%";
+
         // Limpiar el textarea de entrada
         textarea.value = "";
     }
@@ -84,6 +99,20 @@ document.addEventListener('DOMContentLoaded', function() {
         homeTextoEncriptado.style.borderRadius = ""; // Restablecer el border-radius
         homeImg.style.display = "block";
         mensaje.style.display = "block";
+
+        // Ocultar la imagen si la pantalla es de 1000px o menos
+        if (window.innerWidth <= 1000) {
+            imgOcultar.style.display = 'none';
+        }
+
+        // Centrar la sección home_texto_encriptado
+        homeTextoEncriptado.style.display = "flex";
+        homeTextoEncriptado.style.flexDirection = "column";
+        homeTextoEncriptado.style.justifyContent = "center";
+        homeTextoEncriptado.style.alignItems = "center";
+        homeTextoEncriptado.style.textAlign = "center";
+        homeTextoEncriptado.style.margin = "auto";
+        homeTextoEncriptado.style.maxWidth = "100%";
     }
 
     // Función para copiar el texto del textarea de salida
@@ -119,6 +148,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Ocultar inicialmente el textarea de salida y el botón de copiar
         toggleOutputVisibility(false);
         copiarButton.style.display = "none";
+
+        // Estilo adicional para centrar el botón Copiar
+        copiarButton.style.marginTop = "10px"; // Ajusta el margen superior si es necesario
     } else {
         console.warn('Algunos elementos no se encontraron en el DOM.');
     }

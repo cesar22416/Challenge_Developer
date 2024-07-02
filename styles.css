@@ -58,7 +58,7 @@
     color: var(--cuarto-color);
     font-family: var(--font-famili);
     font-size: var(--font-size);
-    margin-right: 5rem;
+    
     margin-top: 1.2rem;
 }
 .boton_desencriptar{
@@ -70,7 +70,7 @@
     color: var(--primary-color);
     font-family: var(--font-famili);
     font-size: var(--font-size);
-    margin-right: 5rem;
+    
     margin-top: 1.2rem;
 }
 
@@ -85,7 +85,9 @@
 
 .nav{
     display: flex;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
     background: var(--cuarto-color);
     padding-left: 10rem;
 }
@@ -103,6 +105,8 @@
 }
 .home_botones{
     display: flex;
+    justify-content: space-around;
+    margin-bottom: 5rem;
 }
 .home_formulario{
     display: flex;
@@ -149,15 +153,28 @@
     
 }
 .home_texto_encriptado p{
-    font-size: 2.5rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .home_img{
     width: 100%;
 }
 .home_label_encryptado{
-    font-size:2rem;
+    text-align: justify;
+    font-size:1rem;
     color: var(--primary-color);
+}
+#back{
+    justify-content: center;
+}
+#copiar{
+display: flex;
+justify-content: center;
+background: red;
+width: 50%;
 }
 
 .home_aside{
@@ -215,6 +232,12 @@
     .home_texto_encriptado{
         height: 350px;
         justify-content: center; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .boton{
+        width: 10rem;
     }
   }
 

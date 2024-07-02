@@ -10,7 +10,9 @@
 
 <nav class="nav">
     <img src="/imagenes/logp.png" class="img_nav" alt="">
+    <button class="boton" id="back">Back</button>
 </nav>
+
 
 <section class="box_madre">
     <article class="home_formulario">
@@ -24,18 +26,17 @@
             <aside class="home_botones">
                 <button class="boton_encrytar" id="encrytar">ENCRYPTO</button>
                 <button class="boton_desencriptar" type="button" id="desencriptar">DESENCRYPTO</button>
-                <button class="boton_encrytar" id="back">Go Back</button>
             </aside>
         </section>
     </article>
 
     <aside class="home_aside">
         <section class="home_texto_encriptado">
-            <img src="./imagenes/arte.png" alt="" class="home_img">
+            <img src="./imagenes/arte.png" alt="" class="home_img" id="imgOcultar">
             <p id="mensaje">Ningún mensaje fue encontrado</p>
             <label for="outputText" class="home_label_encryptado">Ingresa el texto que desees encriptar o desencriptar.</label>  
             <textarea name="outputText" id="outputText"></textarea>    
-            <button id="copiar" class="boton_encrytar">Copiar</button>  
+            <button id="copiar" class="boton">Copiar</button>  
         </section>
     </aside>
 </section>
