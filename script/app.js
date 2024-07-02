@@ -27,18 +27,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Función para validar el texto de entrada
+    function validateInput(text) {
+        const regex = /^[a-z\s]+$/;
+        return regex.test(text);
+    }
+
     // Función para encriptar texto utilizando el cifrado César
     function encryptText() {
         var input = textarea.value;
+
+        // Validar el texto de entrada
+        if (!validateInput(input)) {
+            // Mostrar la alerta de SweetAlert
+            swal("Oops...", "Solo letras minúsculas y sin acentos", "error");
+            return;
+        }
+
         var output = "";
         var shift = 3; // Desplazamiento de caracteres para el cifrado César
 
         for (var i = 0; i < input.length; i++) {
             var charCode = input.charCodeAt(i);
 
-            if (charCode >= 65 && charCode <= 90) {  // Letras mayúsculas
-                output += String.fromCharCode((charCode - 65 + shift) % 26 + 65);
-            } else if (charCode >= 97 && charCode <= 122) {  // Letras minúsculas
+            if (charCode >= 97 && charCode <= 122) {  // Letras minúsculas
                 output += String.fromCharCode((charCode - 97 + shift) % 26 + 97);
             } else {
                 output += input.charAt(i);  // Conserva caracteres no alfabéticos
@@ -77,9 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         for (var i = 0; i < input.length; i++) {
             var charCode = input.charCodeAt(i);
-            if (charCode >= 65 && charCode <= 90) {  // Para letras mayúsculas
-                output += String.fromCharCode((charCode - 65 - shift + 26) % 26 + 65);
-            } else if (charCode >= 97 && charCode <= 122) {  // Para letras minúsculas
+            if (charCode >= 97 && charCode <= 122) {  // Para letras minúsculas
                 output += String.fromCharCode((charCode - 97 - shift + 26) % 26 + 97);
             } else {
                 output += input.charAt(i);  // Conserva caracteres no alfabéticos
