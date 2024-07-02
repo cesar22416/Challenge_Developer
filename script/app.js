@@ -54,11 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         homeTextoEncriptado.style.borderRadius = "3rem";
         homeImg.style.display = "none";
         mensaje.style.display = "none";
-
-        // Mostrar la imagen si la pantalla es más ancha que 1000px
-        if (window.innerWidth > 1000) {
-            imgOcultar.style.display = 'block';
-        }
+        imgOcultar.style.display = 'none'; // Ocultar la imagen específica
 
         // Centrar la sección home_texto_encriptado
         homeTextoEncriptado.style.display = "flex";
@@ -148,9 +144,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Ocultar inicialmente el textarea de salida y el botón de copiar
         toggleOutputVisibility(false);
         copiarButton.style.display = "none";
-
-        // Estilo adicional para centrar el botón Copiar
-        copiarButton.style.marginTop = "10px"; // Ajusta el margen superior si es necesario
     } else {
         console.warn('Algunos elementos no se encontraron en el DOM.');
     }
