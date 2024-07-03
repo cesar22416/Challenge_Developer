@@ -158,3 +158,4 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('Algunos elementos no se encontraron en el DOM.');
     }
 });
+

@@ -196,6 +196,16 @@ width: 50%;
     color: var(--cuarto-color);
     font-size: 1.6rem;
 }
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-famili);
+    color: var(--tercer-color);
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+}
 
 
 @media (max-width: 1000px) {
@@ -208,6 +218,9 @@ width: 50%;
     display: flex;
     justify-content: center;
      padding-left: 0;
+    }
+    .img_nav{
+        margin-left: 5rem;
     }
     .home_aside{
         width: 80%;
@@ -244,4 +257,5 @@ width: 50%;
     }
   }
 
+  
   
